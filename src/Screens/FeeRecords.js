@@ -9,15 +9,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Button } from 'react-native-paper';
 import Poppup from '../Components/poppus';
 import MosqueImg from '../Components/MosqueImg';
+import Header from '../Components/Header';
 
 export default function FeeRecords() {
 
     const [visible, setVisible] = useState(false);
     const showDialog = () => { setVisible(true) }
     const hideDialog = () => { setVisible(!true) }
-
-
-
     const data = [
         {
             date: "january",
@@ -34,114 +32,117 @@ export default function FeeRecords() {
     ]
 
     return (
-        <SafeAreaView style={styles.container} >
-
-            <View style={styles.TopHeadingText} >
-                <View style={styles.circcleBox} >
-                    <Text style={styles.userIcons} >
-                        <FontAwesome name="user-o" size={27} color="#313d71" />
-                    </Text>
+        <SafeAreaView  style={{flex:1 , position:'relative'}} >
+            <Header />
+            <View  style={styles.container}>
+                <View style={styles.TopHeadingText} >
+                    <View style={styles.circcleBox} >
+                        <Text style={styles.userIcons} >
+                            <FontAwesome name="user-o" size={27} color="#313d71" />
+                        </Text>
+                    </View>
+                    <View style={styles.headingBox} >
+                        <Text style={styles.mainHaeding} >
+                            Rizwan Ali
+                        </Text>
+                    </View>
                 </View>
-                <View style={styles.headingBox} >
-                    <Text style={styles.mainHaeding} >
-                        Rizwan Ali
-                    </Text>
-                </View>
-            </View>
-            {/* Line */}
-            <View style={{ justifyContent: "center", flexDirection: 'row' }} >
-                <View style={{ width: 50, height: 2, backgroundColor: '#ffc400' }} />
-            </View>
-            {/* Mosque Image */}
-            <View style={{ marginTop: 10 }} >
-                <MosqueImg />
-            </View>
-            {/* Sub Heading */}
-            <View>
-                <Text style={styles.subheading} >Fees Records</Text>
                 {/* Line */}
                 <View style={{ justifyContent: "center", flexDirection: 'row' }} >
-                    <View style={{ width: 50, height: 2, backgroundColor: '#ffc400' }} />
+                    <View style={{ width: 50, height: 2, backgroundColor: '#FFAA1B' }} />
                 </View>
+                {/* Mosque Image */}
+                <View style={{ marginTop: 10 }} >
+                    <MosqueImg />
+                </View>
+                {/* Sub Heading */}
+                <View>
+                    <Text style={styles.subheading} >Fees Records</Text>
+                    {/* Line */}
+                    <View style={{ justifyContent: "center", flexDirection: 'row' }} >
+                        <View style={{ width: 50, height: 2, backgroundColor: 'FFAA1B' }} />
+                    </View>
+                </View>
+                {/* List Section */}
+                <View style={styles.infoContainer}  >
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Role</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                Student
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox}>
+                            <Text style={styles.leftBoxText} >Course</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                Dars e Nizami
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Months</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                Jan 2022
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Fees</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                2000 Pkr
+                            </Text>
+                        </View>
+                    </View >
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Status</Text>
+                        </View>
+                        <View style={styles.textBox} >
+                            <Text style={styles.righttBoxText} >
+                                paid
+                            </Text>
+                        </View>
+                    </View >
+                    <View style={styles.btnBox} >
+                        <View>
+                            <Text style={styles.textOutstaning} >Total Outstanding</Text>
+                            <Text style={styles.pkrText} >6,000 Pkr</Text>
+                        </View>
+                        <View>
+                            <Button
+                                mode="contained"
+                                uppercase={false}
+                                style={{ borderRadius: 6, paddingVertical: 2 }}
+                                labelStyle={{ fontSize: 14 }}
+                                color='red'
+                                onPress={showDialog}
+                            >
+                                See Detail
+                            </Button>
+                        </View>
+                    </View>
+                </View>
+                <Poppup
+                    visible={visible}
+                    hideDialog={hideDialog}
+                    style={styles.PoppupStyling}
+                    title="Dues Record"
+                    data={data}
+                />
+
             </View>
-            {/* List Section */}
-            <View style={styles.infoContainer}  >
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Role</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            Student
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox}>
-                        <Text style={styles.leftBoxText} >Course</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            Dars e Nizami
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Months</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            Jan 2022
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Fees</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            2000 Pkr
-                        </Text>
-                    </View>
-                </View >
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Status</Text>
-                    </View>
-                    <View style={styles.textBox} >
-                        <Text style={styles.righttBoxText} >
-                            paid
-                        </Text>
-                    </View>
-                </View >
-                <View style={styles.btnBox} >
-                    <View>
-                        <Text style={styles.textOutstaning} >Total Outstanding</Text>
-                        <Text style={styles.pkrText} >6,000 Pkr</Text>
-                    </View>
-                    <View>
-                        <Button
-                            mode="contained"
-                            uppercase={false}
-                            style={{ borderRadius: 6, paddingVertical: 2 }}
-                            labelStyle={{ fontSize: 14 }}
-                            color='red'
-                            onPress={showDialog}
-                        >
-                            See Detail
-                        </Button>
-                    </View>
-                </View>
-            </View>
-            <Poppup
-                visible={visible}
-                hideDialog={hideDialog}
-                style={styles.PoppupStyling}
-                title="Dues Record"
-                data={data}
-            />
         </SafeAreaView>
     )
 }
@@ -149,7 +150,12 @@ export default function FeeRecords() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        position:'absolute',
+        top:53,
+        backgroundColor: '#ffff',
+        borderTopLeftRadius: 22,
+        borderTopRightRadius: 22,
+        height:"100%"
     },
     TopHeadingText: {
         display: 'flex',
@@ -162,7 +168,7 @@ const styles = StyleSheet.create({
         height: 45,
         width: 45,
         borderRadius: 55,
-        borderColor: "#ffc400",
+        borderColor: "#FFAA1B",
         borderWidth: 3,
         position: "relative",
     },
@@ -235,8 +241,5 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginTop: 3,
         fontWeight: '500'
-
     }
-
-
 });

@@ -4,12 +4,20 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
-import AttandanceRecords from './src/Screens/AttandanceRecords';
-import Poppup from './src/Components/poppus';
-import FeeRecords from './src/Screens/FeeRecords';
-// import { Ionicons } from '@expo/vector-icons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import AttandanceRecords from './src/Screens/AttandanceRecords';
+import FeeRecords from './src/Screens/FeeRecords';
+import Detail from './src/Screens/Detail';
+import Progress from './src/Screens/Progress';
+
+
+import Poppup from './src/Components/poppus';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -58,7 +66,7 @@ const Tab = createBottomTabNavigator();
 
 
 const App = () => {
-  const [first, setfirst] = useState("Students")
+  const [first, setfirst] = useState("Student")
 
   return (
     // <AttandanceRecords />
@@ -69,45 +77,87 @@ const App = () => {
 
     <NavigationContainer>
       <Tab.Navigator
+        sceneAnimationEnabled={true}
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            if (route.name === 'Home') {
-              iconName = focused
-                ? 'ios-information-circle'
-                : 'ios-information-circle-outline';
-            } else if (route.name === 'Settings') {
-              iconName = focused ? 'alert-circle' : 'airplane-sharp';
-            } else if (route.name === 'SettingsScren') {
-              iconName = focused ? 'airplane-sharp' : 'american-football';
-            } else if (route.name === 'fisrt') {
-              iconName = focused ? 'aperture' : 'alert-circle';
-            }
-
-
-            // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
+          headerShown: false,
+          tabBarStyle: {
+            backgroundColor: '#ffff',
+            height: 55,
+            paddingBottom: 5
           },
-          tabBarActiveTintColor: 'blue',
-          tabBarInactiveTintColor: 'gray',
+          tabBarIcon: ({ focused, color, size }) => {
+            if (route.name === 'Detail') {
+              return (
+                <FontAwesome
+                  name={focused ? 'user-o' : 'user-o'}
+                  size={27}
+                  color={color}
+                  style={{ marginTop: 5, fontWeight: '900' }}
+                />
+              );
+            } else if (route.name === 'Attendance') {
+              return (
+                <Ionicons
+                  name={focused ? 'list' : 'ios-list-outline'}
+                  size={27}
+                  color={color}
+                  style={{ marginTop: 5, fontWeight: '900' }}
+                />
+              );
+            }
+            else if (route.name === 'Fees') {
+              return (
+                <MaterialIcons
+                  name={focused ? 'money' : 'money'}
+                  size={27}
+                  color={color}
+                  style={{ marginTop: 5, fontWeight: '900' }}
+                />
+              );
+            }
+            else if (route.name === 'Progress') {
+              return (
+                <MaterialCommunityIcons
+                  name={focused ? 'progress-pencil' : 'progress-pencil'}
+                  size={27}
+                  color={color}
+                  style={{ marginTop: 5, fontWeight: '900' }}
+                />
+              );
+            }
+          },
+          tabBarActiveTintColor: '#1F3C90',
+          tabBarInactiveTintColor: '#050306',
         })}
       >
-
-
-        {
-          first === "Student" ? <Tab.Screen name="fisrt" component={Fisrt} />
-            : <Tab.Screen name="Home" component={HomeScreen} />
-        }
-
-
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name="SettingsScren" component={SettingsScren} />
+        <Tab.Screen name="Detail" component={Detail} />
+        <Tab.Screen name="Attendance" component={AttandanceRecords} />
+        <Tab.Screen name="Fees" component={FeeRecords} />
+        <Tab.Screen name="Progress" component={Progress} />
       </Tab.Navigator>
-    </NavigationContainer>
+    </NavigationContainer >
   );
 };
 
 const styles = StyleSheet.create({});
 
 export default App;
+
+
+
+
+
+
+
+
+// if (route.name === 'Detail') {
+//   iconName = focused
+//     ? 'user'
+//     : 'user-o';
+// } else if (route.name === 'Attendance ') {
+//   iconName = focused ? 'alert-circle' : 'airplane-sharp';
+// } else if (route.name === 'SettingsScren') {
+//   iconName = focused ? 'airplane-sharp' : 'american-football';
+// } else if (route.name === 'fisrt') {
+//   iconName = focused ? 'aperture' : 'alert-circle';
+// }

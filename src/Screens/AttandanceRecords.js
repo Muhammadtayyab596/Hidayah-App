@@ -11,6 +11,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Button } from 'react-native-paper';
 import Poppup from '../Components/poppus';
 import MosqueImg from '../Components/MosqueImg';
+import Header from '../Components/Header';
 
 export default function AttandanceRecords() {
 
@@ -89,7 +90,7 @@ export default function AttandanceRecords() {
 
     return (
         <SafeAreaView style={styles.container} >
-
+            <Header />
             <View style={styles.TopHeadingText} >
                 <View style={styles.circcleBox} >
                     <Text style={styles.userIcons} >
@@ -145,11 +146,11 @@ export default function AttandanceRecords() {
                         <Text style={styles.leftBoxText} >Months</Text>
                     </View>
                     <View style={styles.textBox}>
-                        <View style={{display:"flex", flexDirection:"row" , justifyContent:"space-between"}} >
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }} >
                             <Text style={styles.righttBoxText} >
                                 Jan 2022
                             </Text>
-                            <AntDesign name="down" size={20} color="#ffc400" />
+                            <AntDesign name="down" size={20} color="#FFAA1B" />
                         </View>
                     </View>
                 </View>
@@ -190,7 +191,7 @@ export default function AttandanceRecords() {
                         uppercase={false}
                         style={{ borderRadius: 14, paddingVertical: 3 }}
                         labelStyle={{ fontSize: 15 }}
-                        color='#243C90'
+                        color='#1F3C90'
                         onPress={showDialog}>
                         Show Full Attendance
                     </Button>
@@ -210,7 +211,7 @@ export default function AttandanceRecords() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#ffff',
     },
     TopHeadingText: {
         display: 'flex',
@@ -237,12 +238,12 @@ const styles = StyleSheet.create({
     },
     mainHaeding: {
         fontSize: 22,
-        color: '#243C90',
+        color: '#1F3C90',
         fontWeight: '500'
     },
     subheading: {
         fontSize: 20,
-        color: '#243C90',
+        color: '#1F3C90',
         fontWeight: '500',
         textAlign: "center",
         marginVertical: 5,
@@ -257,7 +258,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderWidth: 2,
-        borderColor: "#243C90",
+        borderColor: "#1F3C90",
         borderRadius: 8,
         padding: 10,
         paddingHorizontal: 30,
