@@ -33,7 +33,7 @@ export default function FeeRecords() {
 
     return (
         <SafeAreaView  style={{flex:1 , position:'relative'}} >
-            <Header />
+            <Header  headerTitle = "Fee Records" />
             <View  style={styles.container}>
                 <View style={styles.TopHeadingText} >
                     <View style={styles.circcleBox} >
@@ -151,11 +151,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         position:'absolute',
-        top:53,
+        top:54,
+        left:0,
         backgroundColor: '#ffff',
         borderTopLeftRadius: 22,
         borderTopRightRadius: 22,
-        height:"100%"
+        height:"100%",
+        width:'100%',
     },
     TopHeadingText: {
         display: 'flex',

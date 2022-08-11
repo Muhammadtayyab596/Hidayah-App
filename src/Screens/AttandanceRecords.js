@@ -89,121 +89,124 @@ export default function AttandanceRecords() {
     const hideDialog = () => { setVisible(!true) }
 
     return (
-        <SafeAreaView style={styles.container} >
-            <Header />
-            <View style={styles.TopHeadingText} >
-                <View style={styles.circcleBox} >
-                    <Text style={styles.userIcons} >
-                        <FontAwesome name="user-o" size={27} color="#313d71" />
-                    </Text>
+        <SafeAreaView style={{ flex: 1, position: 'relative' }} >
+            <Header  headerTitle = "Attendance Records" />
+            <View style={styles.container} >
+
+                <View style={styles.TopHeadingText} >
+                    <View style={styles.circcleBox} >
+                        <Text style={styles.userIcons} >
+                            <FontAwesome name="user-o" size={27} color="#313d71" />
+                        </Text>
+                    </View>
+                    <View style={styles.headingBox} >
+                        <Text style={styles.mainHaeding} >
+                            Rizwan Ali
+                        </Text>
+                    </View>
                 </View>
-                <View style={styles.headingBox} >
-                    <Text style={styles.mainHaeding} >
-                        Rizwan Ali
-                    </Text>
-                </View>
-            </View>
-            {/* Line */}
-            <View style={{ justifyContent: "center", flexDirection: 'row' }} >
-                <View style={{ width: 50, height: 2, backgroundColor: '#ffc400' }} />
-            </View>
-            {/* Mosque Image */}
-            <View style={{ marginTop: 10 }} >
-                <MosqueImg />
-            </View>
-            {/* Sub Heading */}
-            <View>
-                <Text style={styles.subheading} >Attendance Records</Text>
                 {/* Line */}
                 <View style={{ justifyContent: "center", flexDirection: 'row' }} >
                     <View style={{ width: 50, height: 2, backgroundColor: '#ffc400' }} />
                 </View>
-            </View>
-            {/* List Section */}
-            <View style={styles.infoContainer}  >
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Role</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            Student
-                        </Text>
+                {/* Mosque Image */}
+                <View style={{ marginTop: 10 }} >
+                    <MosqueImg />
+                </View>
+                {/* Sub Heading */}
+                <View>
+                    <Text style={styles.subheading} >Attendance Records</Text>
+                    {/* Line */}
+                    <View style={{ justifyContent: "center", flexDirection: 'row' }} >
+                        <View style={{ width: 50, height: 2, backgroundColor: '#ffc400' }} />
                     </View>
                 </View>
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox}>
-                        <Text style={styles.leftBoxText} >Course</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            Dars e Nizami
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Months</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }} >
+                {/* List Section */}
+                <View style={styles.infoContainer}  >
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Role</Text>
+                        </View>
+                        <View style={styles.textBox}>
                             <Text style={styles.righttBoxText} >
-                                Jan 2022
+                                Student
                             </Text>
-                            <AntDesign name="down" size={20} color="#FFAA1B" />
                         </View>
                     </View>
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox}>
+                            <Text style={styles.leftBoxText} >Course</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                Dars e Nizami
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Months</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }} >
+                                <Text style={styles.righttBoxText} >
+                                    Jan 2022
+                                </Text>
+                                <AntDesign name="down" size={20} color="#FFAA1B" />
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Presents</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                2
+                            </Text>
+                        </View>
+                    </View >
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Absents</Text>
+                        </View>
+                        <View style={styles.textBox} >
+                            <Text style={styles.righttBoxText} >
+                                2
+                            </Text>
+                        </View>
+                    </View >
+                    <View style={styles.flexWrapper} >
+                        <View style={styles.textBox} >
+                            <Text style={styles.leftBoxText} >Late</Text>
+                        </View>
+                        <View style={styles.textBox}>
+                            <Text style={styles.righttBoxText} >
+                                2
+                            </Text>
+                        </View>
+                    </View  >
+                    {/* Button */}
+                    <View style={{ marginTop: 15 }}>
+                        <Button
+                            mode="contained"
+                            uppercase={false}
+                            style={{ borderRadius: 14, paddingVertical: 3 }}
+                            labelStyle={{ fontSize: 15 }}
+                            color='#1F3C90'
+                            onPress={showDialog}>
+                            Show Full Attendance
+                        </Button>
+                    </View>
                 </View>
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Presents</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            2
-                        </Text>
-                    </View>
-                </View >
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Absents</Text>
-                    </View>
-                    <View style={styles.textBox} >
-                        <Text style={styles.righttBoxText} >
-                            2
-                        </Text>
-                    </View>
-                </View >
-                <View style={styles.flexWrapper} >
-                    <View style={styles.textBox} >
-                        <Text style={styles.leftBoxText} >Late</Text>
-                    </View>
-                    <View style={styles.textBox}>
-                        <Text style={styles.righttBoxText} >
-                            2
-                        </Text>
-                    </View>
-                </View  >
-                {/* Button */}
-                <View style={{ marginTop: 15 }}>
-                    <Button
-                        mode="contained"
-                        uppercase={false}
-                        style={{ borderRadius: 14, paddingVertical: 3 }}
-                        labelStyle={{ fontSize: 15 }}
-                        color='#1F3C90'
-                        onPress={showDialog}>
-                        Show Full Attendance
-                    </Button>
-                </View>
+                <Poppup
+                    visible={visible}
+                    hideDialog={hideDialog}
+                    style={styles.PoppupStyling}
+                    title="Attendance Records"
+                    data={data}
+                />
             </View>
-            <Poppup
-                visible={visible}
-                hideDialog={hideDialog}
-                style={styles.PoppupStyling}
-                title="Attendance Records"
-                data={data}
-            />
         </SafeAreaView>
     )
 }
@@ -211,7 +214,14 @@ export default function AttandanceRecords() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        position: 'absolute',
+        top: 54,
+        left: 0,
         backgroundColor: '#ffff',
+        borderTopLeftRadius: 22,
+        borderTopRightRadius: 22,
+        height: "100%",
+        width: '100%',
     },
     TopHeadingText: {
         display: 'flex',

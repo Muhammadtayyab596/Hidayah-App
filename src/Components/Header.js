@@ -5,14 +5,15 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 
-export default function Header() {
+export default function Header(props) {
+    const {headerTitle} = props
     return (
         <View style={styles.headerContainer}  >
             <View style={{marginHorizontal:5}} >
-                <Octicons name='three-bars' size={27} color="#ffff" />
+                <Octicons name='three-bars' size={25} color="#ffff" />
             </View>
             <View>
-                <Text style={{fontSize:20, color:'#ffff'}} >Details</Text>
+                <Text style={{fontSize:17, color:'#ffff' , marginLeft:20}} >{headerTitle}</Text>
             </View>
             <View  >
                 <View style={styles.headerright}>
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         paddingHorizontal: 10,
-        paddingVertical: 10,
+        paddingTop: 13,
         paddingBottom:30
     },
     headerright: {
