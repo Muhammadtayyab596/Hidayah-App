@@ -25,6 +25,7 @@ import Home from './src/Screens/Home';
 import BottomTabs from './src/Navigation/BottomTabs/BottomTabs';
 import Login from './src/Screens/Login';
 import Allfaculties from './src/Screens/FacultiesList';
+import Practics from './src/Screens/Practics';
 
 // const Tab = createBottomTabNavigator();
 const App = () => {
@@ -36,7 +37,8 @@ const App = () => {
     // <FeeRecords />
     // <Home />
     // <Login />
-    <Allfaculties />
+    // <Allfaculties />
+    <Practics />
 
   );
 };

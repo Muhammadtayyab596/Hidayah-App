@@ -1,19 +1,19 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, ScrollView, ImageBackground } from 'react-native'
-import React, { useState } from 'react'
-import { Card } from 'react-native-paper'
-import Header from '../Components/Header'
-import MosqueImg from '../Components/MosqueImg'
+import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity, ImageBackground } from 'react-native'
+import React from 'react'
+import Header from '../Components/Header';
+import MosqueImg from '../Components/MosqueImg';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
 import Feather from 'react-native-vector-icons/Feather';
-export default function Allfaculties() {
-    return (
-        <View style={styles.MainPage}>
-            <Header headerTitle="All Faculties" />
 
-            <View style={styles.container}>
+
+export default function Practics() {
+    return (
+        <View style={{ flex: 1 }}>
+            <Header headerTitle="All Faculties" />
+            <View style={{ flex: 1, backgroundColor: "#fff", borderRadius: 20, marginTop: -15 }}>
                 <View style={styles.subContainer}>
+                    {/* Top Heading */}
                     <View style={styles.headingcontainer} >
                         <Text style={styles.students} >Faculties</Text>
                         <Text style={styles.list} > List</Text>
@@ -31,28 +31,21 @@ export default function Allfaculties() {
                         <TextInput style={styles.searchInput} placeholder="Search" />
                         <Text style={styles.searchicon}><Feather name="search" size={20} color="#bdbdbd" /></Text>
                     </View>
-
-
                 </View>
-            </View>
-            <View style={styles.listingItems}>
-                <ImageBackground
-                    source={require('../Assets/watermark3.png')}
-                    resizeMode="cover"
-                >
-
-                    <View style={styles.listmainConatiner}>
-                        <ScrollView>
+                {/* List Conatiner Scrollview */}
+                <ScrollView>
+                    <ImageBackground source={require('../Assets/watermark3.png')}>
+                        <View style={styles.listingItems} >
                             <TouchableOpacity style={styles.listContainer} >
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Teacher</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -64,12 +57,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Nazim</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -81,12 +74,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Accountant</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -98,12 +91,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Teacher</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -115,12 +108,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Teacher</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -132,12 +125,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Teacher</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -149,12 +142,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Teacher</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -166,12 +159,12 @@ export default function Allfaculties() {
                                 <View style={styles.innerConatiner} >
                                     <View style={styles.iconText} >
                                         <View style={styles.iconcircle} >
-                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={30} /></Text>
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
                                         </View>
                                         <View style={styles.info} >
                                             <Text style={styles.studentname}  >Ghulam Mustafa</Text>
                                             <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
-
+                                            <Text style={styles.coursname}  >Teacher</Text>
                                         </View>
                                     </View>
                                     <View>
@@ -179,26 +172,35 @@ export default function Allfaculties() {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                        </ScrollView>
-                    </View>
-                </ImageBackground>
+                            <TouchableOpacity style={styles.listContainer} >
+                                <View style={styles.innerConatiner} >
+                                    <View style={styles.iconText} >
+                                        <View style={styles.iconcircle} >
+                                            <Text style={styles.userIcon} ><FontAwesome name="user-o" size={25} /></Text>
+                                        </View>
+                                        <View style={styles.info} >
+                                            <Text style={styles.studentname}  >Ghulam Mustafa</Text>
+                                            <Text style={styles.coursname}  >Mon to Wed 06:00PM</Text>
+                                            <Text style={styles.coursname}  >Teacher</Text>
+                                        </View>
+                                    </View>
+                                    <View>
+                                        <Text><AntDesign name="right" size={25} color="#fcaf17" /></Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                    </ImageBackground>
+                </ScrollView>
             </View>
         </View>
     )
 }
 
+
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 0.5,
-        position: 'relative',
-        top: -14,
-        left: 0,
-        backgroundColor: '#ffff',
-        borderTopLeftRadius: 22,
-        borderTopRightRadius: 22,
-        // height: "100%",
-        width: '100%',
-    },
+
     subContainer: {
         marginTop: 15
     },
@@ -243,24 +245,18 @@ const styles = StyleSheet.create({
         bottom: 24,
         right: 35,
     },
-
-
-    // list Conatiner
-    listmainConatiner: {
-        width: '90%',
-        // display: 'flex',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        // paddingHorizontal: 12,
+    listingItems: {
+        alignItems: "center",
+        marginBottom: 10
     },
     listContainer: {
         borderWidth: 2,
         borderColor: "#1F3C90",
-        width: "100%",
+        width: "93%",
         marginTop: 10,
-        paddingVertical: 8,
-        paddingHorizontal: 10,
-        borderRadius: 15,
+        paddingVertical: 7,
+        paddingHorizontal: 12,
+        borderRadius: 12,
     },
     innerConatiner: {
         display: 'flex',
@@ -274,16 +270,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     studentname: {
-        fontSize: 18,
+        fontSize: 17,
         fontWeight: "500",
         color: "#1F3C90"
     },
     iconcircle: {
-        width: 50,
-        height: 50,
-        borderRadius: 50,
+        width: 45,
+        height: 45,
+        borderRadius: 45,
         position: 'relative',
-        borderWidth: 3,
+        borderWidth: 2,
         borderColor: "#fcaf17",
     },
     info: {
@@ -298,13 +294,5 @@ const styles = StyleSheet.create({
         color: '#656565',
         fontSize: 10,
     },
-    MainPage: {
-        flex: 1,
-        alignContent: 'center',
-        backgroundColor: '#fff'
-    },
-    listingItems: {
-        flex: 1,
-        backgroundColor: '#fff'
-    }
-});
+
+})
